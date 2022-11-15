@@ -1,4 +1,4 @@
-arr = [i ** 2 for i in range(1, 129)]
+arr = [i for i in range(1, 129)]
 
 target = int(input("Please enter id (1 to 128) : ")) - 1
 
