@@ -1,32 +1,38 @@
-import numpy as np
+# coding: utf-8
 
+import const
 
-# 1から128までの整数を内包表記で作成
-arr = [i for i in range(1, 129)]
+const.MEMO_MAX_SIZE = 8
 
-# 配列のシャッフル
-np.random.shuffle(arr)
+def moveForeArray(array):
+    for i in range(len(array)):
+        if array[i] == None:
+            break
 
-# STDIN
-s = input("Please enter id (1 to 128) : ")
+        else:
+            i = const.MEMO_MAX_SIZE
 
-# str -> int
-select = int(s)
+    memoArrayCount = i
 
-# 選んだ数字の探索　(idx = arr.index() でも可)
-for j in range(len(arr)):
-    if select == arr[j]:
-        break;
+    s = input("Please set number in -> " + str(array) + " : ")
 
-# 対象をtmpに代入
-tmp = arr[j]
+    select = int(s)
 
-# 配列の要素数に合わせてselectから-1する
-target = j
+    idx = array.index(select)
 
-# 移動
-for k in range(target):
-    arr[target - k] = arr[target - k - 1]
+    tmp = array[idx]
 
-# 配列の先頭に対象の数字を移動
-arr[0] = tmp
+    for j in range(memoArrayCount - idx):
+        array[idx + j] = array[idx + j + 1]
+
+    array[memoArrayCount - 1] = tmp
+
+    print(array)
+
+def main():
+    arr = [11, 22, 33, 44, None, None, None, None]
+
+    moveForeArray(arr)
+
+if __name__ == "__main__":
+    main()
