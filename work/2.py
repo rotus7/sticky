@@ -22,7 +22,7 @@ for j in range(len(arr)):
 tmp = arr[j]
 
 # 配列の要素数に合わせてselectから-1する
-target = select - 1
+target = j
 
 # 移動
 for k in range(target):
