@@ -1,7 +1,6 @@
 # coding: utf-8
 
 from src import Window
-from src import Back
 
 
 def main():
