@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1500</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Sticky</string>
+  </property>
+  <widget class="QWidget" name="one" native="true">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>200</y>
+     <width>300</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(6, 123, 194);</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="two" native="true">
+   <property name="geometry">
+    <rect>
+     <x>1000</x>
+     <y>100</y>
+     <width>400</width>
+     <height>400</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(132, 188, 218);</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="three" native="true">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>200</y>
+     <width>300</width>
+     <height>500</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(236, 195, 11);</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="four" native="true">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>600</y>
+     <width>400</width>
+     <height>300</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(243, 119, 72);</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="five" native="true">
+   <property name="geometry">
+    <rect>
+     <x>900</x>
+     <y>800</y>
+     <width>400</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(213, 96, 98);</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>reset()</slot>
+ </slots>
+</ui>
