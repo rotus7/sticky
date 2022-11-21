@@ -1,26 +1,36 @@
+# -*- coding: utf-8 -*-
+
+from os.path import dirname, abspath
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QIcon
-from src.ui import Ui_Form
-
-
-class gui(QtWidgets.QDialog):
-    def __init__(self, parent=None):
-        super(gui, self).__init__(parent)
-        self.ui = Ui_Form()
-        self.ui.setupUi(self)
-
-    def reset(self):
-        print("Hello")
+from src.ctr import gui
 
 
 def main():
+    # set qt-app class
     app = QtWidgets.QApplication(sys.argv)
+
+    # set window icon
     app.setWindowIcon(QIcon('image/sticky.ico'))
+
+    # set class (create window)
     window = gui()
+
+    # show window
     window.show()
+
+    # exit
     sys.exit(app.exec_())
 
 
 if __name__ == '__main__':
+    # get parent directory
+    parent_dir = dirname(dirname(dirname(abspath(__file__))))
+
+    if parent_dir not in sys.path:
+        # set parent directory
+        sys.path.append(parent_dir)
+
+    # main function
     main()

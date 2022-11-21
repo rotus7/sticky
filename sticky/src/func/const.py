@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Constant types in Python.
 """
