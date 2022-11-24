@@ -24,6 +24,7 @@ class SinglyLinkedList():
             if cr.data == data:
                 tgt = i
                 return tgt
+            cr = cr.next
 
         return -1
 
@@ -34,7 +35,7 @@ class SinglyLinkedList():
             return None
 
         if node != -1:
-            print("Conflicted")
+            print(str(data) + " is overlapping...")
             return None
 
 
@@ -72,7 +73,7 @@ class SinglyLinkedList():
             self.head = None
             self.tail = None
 
-        print("Pop out is" + str(cr.data))
+        print(str(cr.data) + " is popped out")
 
         return cr
 
@@ -161,16 +162,20 @@ class SinglyLinkedList():
             return None
 
         elif index == (self.length - 1):
+            print(str(self.tail.data) + " is removed")
             return self.pop()
 
         elif index == 0:
+            print(str(self.head.data) + " is removed")
             return self.shift()
 
         else:
-            backNode = self.get(index - 1)
+            rm = self.getNode(index)
+            backNode = self.getNode(index - 1)
             tgtNode = backNode.next
             backNode.next = tgtNode.next
             self.length -= 1
+            print(str(rm.data) + " is removed")
 
             return tgtNode
 
