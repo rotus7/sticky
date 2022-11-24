@@ -7,7 +7,6 @@ MAX_LENGTH = 10
 class Node():
     def __init__(self, data):
         self.data = data
-
         self.next = None
 
 
@@ -24,6 +23,7 @@ class SinglyLinkedList():
             if cr.data == data:
                 tgt = i
                 return tgt
+
             cr = cr.next
 
         return -1
@@ -32,10 +32,12 @@ class SinglyLinkedList():
 
         if self.length >= MAX_LENGTH - 1:
             print("Size over...")
+
             return None
 
         if node != -1:
             print(str(data) + " is overlapping...")
+
             return None
 
 
@@ -56,6 +58,7 @@ class SinglyLinkedList():
     def pop(self):
         if self.head == None:
             print("List no data")
+
             return None
 
         cr = self.head
@@ -93,10 +96,12 @@ class SinglyLinkedList():
     def unshift(self, data, node):
         if self.length >= MAX_LENGTH - 1:
             print("Size over...")
+
             return None
 
         if node != -1:
-            print("Conflicted")
+            print(str(data) + " is overlapping...")
+
             return None
 
         newNode = Node(data)
@@ -148,32 +153,37 @@ class SinglyLinkedList():
             return bool(self.unshift(data))
 
         else:
+            before = self.get(index)
             newNode = Node(data)
-            backNode = self.get(index - 1)
-            frontNode = backNode.next
-            backNode.next = newNode
-            newNode.next = frontNode
+            prevNode = self.get(index - 1)
+            nextNode = prevNode.next
+            prevNode.next = newNode
+            newNode.next = nextNode
+            print("Node" + str(index) + " Changed " + str(before) + " to " + str(data))
 
             return True
 
     def removeNode(self, index):
         if (index < 0) or (index >= self.length):
             print("Not found data...")
+
             return None
 
         elif index == (self.length - 1):
             print(str(self.tail.data) + " is removed")
+
             return self.pop()
 
         elif index == 0:
             print(str(self.head.data) + " is removed")
+
             return self.shift()
 
         else:
             rm = self.getNode(index)
-            backNode = self.getNode(index - 1)
-            tgtNode = backNode.next
-            backNode.next = tgtNode.next
+            prevNode = self.getNode(index - 1)
+            tgtNode = prevNode.next
+            prevNode.next = tgtNode.next
             self.length -= 1
             print(str(rm.data) + " is removed")
 
