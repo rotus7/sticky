@@ -1,6 +1,5 @@
 # coding: utf-8
 
-from random import randint
 
 MAX_LENGTH = 10
 
