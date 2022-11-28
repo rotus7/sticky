@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtGui, sip
 from src.ui import Ui_Form
-from src.func import const
+from src import const
 
 # set max sticky-notes
 const.MAX_STICKY = 8
@@ -19,6 +19,6 @@ class gui(QtWidgets.QDialog):
         # create ui
         self.ui.setupUi(self)
 
-    def reset(self):
-        print("Hello")
-
+    def resetLayout(self):
+        # reset layout
+        self.ui.resetUi()

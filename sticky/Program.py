@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 
 from os.path import dirname, abspath
-import sys
-from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication
 from PyQt5.QtGui import QIcon
 from src.ctr import gui
+
+import sys
 
 
 def main():
     # set qt-app class
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
 
     # set window icon
     app.setWindowIcon(QIcon('image/sticky.ico'))
@@ -32,5 +33,4 @@ if __name__ == '__main__':
         # set parent directory
         sys.path.append(parent_dir)
 
-    # main function
     main()
