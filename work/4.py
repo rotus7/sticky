@@ -1,6 +1,5 @@
 # coding: utf-8
 
-
 MAX_LENGTH = 10
 
 class Node():
@@ -28,7 +27,6 @@ class SinglyLinkedList():
         return -1
 
     def push(self, data, node):
-
         if self.length >= MAX_LENGTH - 1:
             print("Size over...")
 
@@ -38,7 +36,6 @@ class SinglyLinkedList():
             print(str(data) + " is overlapping...")
 
             return None
-
 
         newNode = Node(data)
 
